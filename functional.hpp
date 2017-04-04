@@ -162,11 +162,11 @@ namespace sad {
 		template<typename _fCallable>
 		static lconstfn auto
 			invoke(_fCallable&& f, std::tuple<_tParams...>&& args,
-				limpl(decay_t<decltype(leo::invoke(lforward(f),
+				limpl(decay_t<decltype(std::invoke(lforward(f),
 					std::get<_vSeq>(std::move(args))...))>* = {})) -> decltype(
-						leo::invoke(lforward(f), std::get<_vSeq>(lforward(args))...))
+						std::invoke(lforward(f), std::get<_vSeq>(lforward(args))...))
 		{
-			return leo::invoke(lforward(f), std::get<_vSeq>(lforward(args))...);
+			return std::invoke(lforward(f), std::get<_vSeq>(lforward(args))...);
 		}
 		template<typename _func>
 		static lconstfn auto
@@ -215,9 +215,9 @@ namespace sad {
 		template<typename _fCallable>
 		static lconstfn auto
 			invoke(_fCallable&& f, std::tuple<_tParams...>&& args)
-			-> decltype(leo::invoke(lforward(f), std::get<_vSeq>(args)...))
+			-> decltype(std::invoke(lforward(f), std::get<_vSeq>(args)...))
 		{
-			return leo::invoke(lforward(f), std::get<_vSeq>(args)...);
+			return std::invoke(lforward(f), std::get<_vSeq>(args)...);
 		}
 		template<typename _func>
 		static lconstfn auto
