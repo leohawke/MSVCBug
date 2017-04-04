@@ -12,5 +12,5 @@ int main(){
 
 	
 	//error C2338: tuple index out of bounds
-	RegisterStrict(root, "*", std::bind(CallBinaryFold<int, std::multiplies<>>, (std::multiplies<>(), 1, _1)));
+	RegisterStrict(root, "*", std::bind(CallBinaryFold<int, std::multiplies<>>,std::multiplies<>(), 1, _1));
 }
