@@ -33,5 +33,5 @@ size_t compile_eval_in_case_label(const std::string& str) {
 }
 
 int main() {
-	std::cout << compile_eval_in_case_label("vertex_shader");
+	std::cout << compile_eval_in_case_label("vertex_shader");//msvc output : 3
 }
